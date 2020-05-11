@@ -11,21 +11,34 @@
 
   <body>
   <nav class="navbar navbar-dark bg-dark">
-  #  
-  <a class="navbar-brand" href="#">HABAL</a>
+  <a class="navbar-brand" href="#">ELFASHL ELZAREE3 :O</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
+  
     <ul class="navbar-nav mr-auto">
+     
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="#">Features</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+      <% if user_signed_in? %>
+
+      <%= link_to('Edit registration', edit_user_registration_path) %>
+      <br>
+      <%= link_to('Logout', destroy_user_session_path, :method => :get) %>        
+    
+    <% else %>
+    
+      <%= link_to('Register', new_user_registration_path)  %>
+      <br>
+      <%= link_to('Login', new_user_session_path)  %>  
+    
+    <% end %>
       </li>
     </ul>
     <span class="navbar-text">
@@ -34,7 +47,6 @@
   </div>
 </nav>
   <br>
-
     <%= yield %>
   </body>
 </html>
