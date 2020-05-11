@@ -11,15 +11,15 @@ class ProductsController < ApplicationController
     #this to add new book
     def new
         @product=Product.new
+        @categories=Category.all
+        @brands=Brand.all
     end
     #this to ad new book
     def create
-        @product=Product.new(params[:product])
-        if @product.valid
-            render json: @product, status: :created, location: @product
-        else
-            render json: @product.errors, status: :unprocessable_entity
-        end
+        @product=Product.new(params.require(:product).permit(:title, :description, :price, :in_stock, :category_id, :brand_id ))
+        @product.save
+        redirect_to :controller => 'products', :action => 'index'
+        
     end 
 
 end

@@ -2,23 +2,16 @@
 <h1>Listing Products</h1>
 
 <div class="container">
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-    </tr>
-  </thead>
- 
-  <tbody>
+<div class="col-3"
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%=product.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">product.title</h5>
+          <p class="card-text">product.description</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+   <% end %>
+      </div>
+      </div>
 </div>
