@@ -4,4 +4,11 @@ class ProductsController < ApplicationController
     def index
         @products=Product.all
     end
+    #this to show product under certain category
+    def show
+        @products=Product.find(params[:id])
+    end
+    
+    
+
 end
