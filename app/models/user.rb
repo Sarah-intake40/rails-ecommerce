@@ -28,7 +28,9 @@ class User < ApplicationRecord
         def cart_total_price
           get_cart_products_with_qty.map { |product, qty| product.price * qty.to_i }.reduce(:+)
         end
-
+        def order_now
+          @order= Order.new
+        end
         def get_cart_products_with_qty
           cart_ids = []
           cart_qtys = []

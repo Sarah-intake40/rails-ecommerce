@@ -35,7 +35,8 @@
       <%end%>
       <li class="nav-item">
       <% if current_user && user_signed_in? %>
-
+       <%= link_to('Cart', cart_path) %>
+       <br>
       <%= link_to('Edit registration', edit_user_registration_path) %>
       <br>
       <%= link_to('Logout', destroy_user_session_path, :method => :get) %>        

@@ -25,7 +25,8 @@
      <%end%>   
     <%= link_to '-', remove_one_cart_path(product), method: :put, class: "btn"%>
     <%= link_to 'Remove', remove_from_cart_path(product), method: :put, class: "btn btn-danger"%>
-      
+      <% @order.user_id = current_user %>
+      <% @order.status ='Ordered'%>
        </tr>
        <%end%>
        <tr >
@@ -34,3 +35,6 @@
        </tbody>
        </table>
        <%= link_to 'Products', products_path%>
+       <div style="float:right">
+       <%= link_to 'Order Now', orders_path(:order => @order), method: :post %>
+       </div>
