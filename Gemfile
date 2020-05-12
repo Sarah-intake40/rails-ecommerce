@@ -10,7 +10,7 @@ gem 'devise'
 gem 'redis-rails'
 gem 'gon'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
