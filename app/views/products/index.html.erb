@@ -11,11 +11,14 @@
         <div class="card-body">
           <h5 class="card-title"><%=product.title%></h5>
           <p class="card-text"><%=product.description%></p>
-          <a href="#" class="btn btn-primary">Add to cart</a>
+          <p><span style="color :blue"><%=product.brand.name%>  </span><span style="color:red;float:right;"><%=product.category.name%></p>
+          <%if signed_in?%>
+          <%= link_to 'show product details', product_path(product.id)%>
+          <%end%>
           </div>
       </div>
         </div>
-   <% end %>
+    <% end %>
       
       </div>
 </div>

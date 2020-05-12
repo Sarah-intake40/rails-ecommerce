@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     end
     #this to show product under certain category
     def show
-        @products=Product.find(params[:id])
+        @product=Product.find(params[:id])
     end
     #this to add new book
     def new

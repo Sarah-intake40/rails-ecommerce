@@ -1,0 +1,32 @@
+<div class="container">
+<h1>Ur shopping cart</h1>
+
+
+<div class="row">
+<table class="table table-dark">
+   <thread>
+     <th>Name</th>
+     <th>Price</th>
+     <th>Quantity</th>
+     <th>subTotal</th>
+     <tbody>
+     <% @cart_products_with_qty.each do |array| %>
+        <% product = array[0]%>
+        <%qty = array[1]%>
+    <tr>
+    <td><%= product.title%></td>
+    <td><%= product.price%></td>
+    <td><%= qty%></td>
+    <td><%= product.price * qty.to_i %></td>
+    <td><%= link_to '+', add_to_cart_path(product), method: :put, class: "btn"%>
+       <%= link_to '-', remove_one_cart_path(product), method: :put, class: "btn"%>
+       <%= link_to 'Remove', remove_from_cart_path(product), method: :put, class: "btn btn-danger"%>
+      
+       </tr>
+       <%end%>
+       <tr >
+       <td colspan="3"> <h5>Total</h5></td>
+       <td><h5><%= @cart_total%></h5></td></tr>
+       </tbody>
+       </table>
+       <%= link_to 'Products', products_path%>

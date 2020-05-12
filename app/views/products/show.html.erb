@@ -1,0 +1,19 @@
+<div class="container">
+<div class="row">
+<div class="col-6" >
+        <div class="card">
+        <div class="card-img-top">
+        <%= image_tag(url_for(@product.image),width: '280px',height: '250px') if @product.image.attached?%></div>
+        <div class="card-body">
+          <h5 class="card-title"><%=@product.title%></h5>
+          <p class="card-text"><%=@product.description%></p>
+          <p><span style="color :blue"><%=@product.brand.name%>  </span><span style="color:red;float:right;"><%=@product.category.name%></p>
+          <%if signed_in?%>
+         <%= link_to 'Add to cart', add_to_cart_path(@product.id), method: :put%><br>
+         <%= link_to 'Back to products', products_path%>
+       <%end%>
+          </div>
+      </div>
+        </div>
+      </div>
+</div>

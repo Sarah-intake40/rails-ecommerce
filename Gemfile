@@ -7,6 +7,8 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 #for authentication
 gem 'devise'
+gem 'redis-rails'
+gem 'gon'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
