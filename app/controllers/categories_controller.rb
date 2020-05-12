@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+    before_filter :authenticate_admin!
     def show
     end
     #this to add new book
