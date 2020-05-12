@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
     #this main page where we view all products
     def index
-        @products=Product.all
+        @products=Product.all.with_attached_image
     end
     #this to show product under certain category
     def show
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     end
     #this to ad new book
     def create
-        @product=Product.new(params.require(:product).permit(:title, :description, :price, :in_stock, :category_id, :brand_id ))
+        @product=Product.new(params.require(:product).permit(:title, :description, :price, :in_stock, :category_id, :brand_id, :image ))
         @product.save
         redirect_to :controller => 'products', :action => 'index'
         

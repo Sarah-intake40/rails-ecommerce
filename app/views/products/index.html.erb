@@ -2,16 +2,20 @@
 <h1>Listing Products</h1>
 
 <div class="container">
-<div class="col-3"
-    <% @products.each do |product| %>
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+<div class="row">
+<% @products.each do |product| %>
+<div class="col-3 ml-3" >
+        <div class="card">
+        <div class="card-img-top">
+        <%= image_tag(url_for(product.image),width: '180px',height: '150px') if product.image.attached?%></div>
         <div class="card-body">
-          <h5 class="card-title">product.title</h5>
-          <p class="card-text">product.description</p>
+          <h5 class="card-title"><%=product.title%></h5>
+          <p class="card-text"><%=product.description%></p>
           <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+      </div>
         </div>
    <% end %>
-      </div>
+      
       </div>
 </div>
